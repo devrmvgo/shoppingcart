@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import ProductList from '../pages/ProductList';
 
@@ -12,10 +12,9 @@ function Routes({ children }: Props): JSX.Element {
     <React.Fragment>
       {children}
       <Switch>
-        {/* <Route exact path="/" component={} /> */}
         <Route exact path="/products" component={ProductList} />
         
-        {/* <Route render={() => <Redirect to="/" />} /> */}
+        <Route render={() => <Redirect to="/products" />} />
       </Switch>
     </React.Fragment>
   );
