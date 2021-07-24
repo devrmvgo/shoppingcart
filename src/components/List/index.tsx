@@ -6,7 +6,7 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import { itemData } from './itemData';
+// import { itemData } from '../../pages/ProductList/itemData';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,24 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const itemData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-export default function TitlebarImageList() {
+type Props = {
+  items: Array<any>;
+  actions?: any;
+};
+
+export default function TitlebarImageList({ items }: Props) {
   const classes = useStyles();
 
   return (
@@ -53,7 +41,7 @@ export default function TitlebarImageList() {
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div">December</ListSubheader>
         </ImageListItem>
-        {itemData.map((item) => (
+        {items.map((item) => (
           <ImageListItem key={item.img}>
             <img src={item.img} alt={item.title} />
             <ImageListItemBar
