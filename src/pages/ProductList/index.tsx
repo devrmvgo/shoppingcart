@@ -7,7 +7,7 @@ import { itemData } from './itemData';
 const Home: React.FC = () => {
   return (
     <>
-      <List items={itemData}/>
+      <List items={itemData} action={(item) => {console.log(item)}}/>
     </>
   );
 };
