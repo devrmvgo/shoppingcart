@@ -1,0 +1,24 @@
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import ProductList from '../pages/ProductList';
+
+interface Props {
+  children?: JSX.Element[] | JSX.Element;
+}
+
+function Routes({ children }: Props): JSX.Element {
+  return (
+    <React.Fragment>
+      {children}
+      <Switch>
+        {/* <Route exact path="/" component={} /> */}
+        <Route exact path="/products" component={ProductList} />
+        
+        {/* <Route render={() => <Redirect to="/" />} /> */}
+      </Switch>
+    </React.Fragment>
+  );
+}
+
+export default Routes;

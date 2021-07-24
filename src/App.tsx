@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 
-function App() {
+import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
+
+function App(): JSX.Element {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello
-        </p>
-      </header>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }
